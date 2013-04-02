@@ -16,8 +16,10 @@
 		2CCD57DB170B250600FBB699 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57DA170B250600FBB699 /* Default.png */; };
 		2CCD57DD170B250600FBB699 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57DC170B250600FBB699 /* Default@2x.png */; };
 		2CCD57DF170B250600FBB699 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57DE170B250600FBB699 /* Default-568h@2x.png */; };
-		2CCD57E2170B250600FBB699 /* LSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57E1170B250600FBB699 /* LSViewController.m */; };
-		2CCD57E5170B250600FBB699 /* LSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57E3170B250600FBB699 /* LSViewController.xib */; };
+		2CCD57E2170B250600FBB699 /* LSCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57E1170B250600FBB699 /* LSCaptureViewController.m */; };
+		2CCD57E5170B250600FBB699 /* LSCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57E3170B250600FBB699 /* LSCaptureViewController.xib */; };
+		2CCD57EC170B26D500FBB699 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCD57EB170B26D500FBB699 /* AVFoundation.framework */; };
+		2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57EE170B277700FBB699 /* LSCaptureManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +36,12 @@
 		2CCD57DA170B250600FBB699 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		2CCD57DC170B250600FBB699 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		2CCD57DE170B250600FBB699 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		2CCD57E0170B250600FBB699 /* LSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSViewController.h; sourceTree = "<group>"; };
-		2CCD57E1170B250600FBB699 /* LSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSViewController.m; sourceTree = "<group>"; };
-		2CCD57E4170B250600FBB699 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LSViewController.xib; sourceTree = "<group>"; };
+		2CCD57E0170B250600FBB699 /* LSCaptureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSCaptureViewController.h; sourceTree = "<group>"; };
+		2CCD57E1170B250600FBB699 /* LSCaptureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSCaptureViewController.m; sourceTree = "<group>"; };
+		2CCD57E4170B250600FBB699 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LSCaptureViewController.xib; sourceTree = "<group>"; };
+		2CCD57EB170B26D500FBB699 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		2CCD57ED170B277700FBB699 /* LSCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCaptureManager.h; sourceTree = "<group>"; };
+		2CCD57EE170B277700FBB699 /* LSCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCaptureManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCD57EC170B26D500FBB699 /* AVFoundation.framework in Frameworks */,
 				2CCD57C9170B250600FBB699 /* UIKit.framework in Frameworks */,
 				2CCD57CB170B250600FBB699 /* Foundation.framework in Frameworks */,
 				2CCD57CD170B250600FBB699 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +79,7 @@
 		2CCD57C7170B250600FBB699 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CCD57EB170B26D500FBB699 /* AVFoundation.framework */,
 				2CCD57C8170B250600FBB699 /* UIKit.framework */,
 				2CCD57CA170B250600FBB699 /* Foundation.framework */,
 				2CCD57CC170B250600FBB699 /* CoreGraphics.framework */,
@@ -85,9 +92,11 @@
 			children = (
 				2CCD57D7170B250600FBB699 /* LSAppDelegate.h */,
 				2CCD57D8170B250600FBB699 /* LSAppDelegate.m */,
-				2CCD57E0170B250600FBB699 /* LSViewController.h */,
-				2CCD57E1170B250600FBB699 /* LSViewController.m */,
-				2CCD57E3170B250600FBB699 /* LSViewController.xib */,
+				2CCD57E0170B250600FBB699 /* LSCaptureViewController.h */,
+				2CCD57E1170B250600FBB699 /* LSCaptureViewController.m */,
+				2CCD57E3170B250600FBB699 /* LSCaptureViewController.xib */,
+				2CCD57ED170B277700FBB699 /* LSCaptureManager.h */,
+				2CCD57EE170B277700FBB699 /* LSCaptureManager.m */,
 				2CCD57CF170B250600FBB699 /* Supporting Files */,
 			);
 			path = DrivingLog;
@@ -163,7 +172,7 @@
 				2CCD57DB170B250600FBB699 /* Default.png in Resources */,
 				2CCD57DD170B250600FBB699 /* Default@2x.png in Resources */,
 				2CCD57DF170B250600FBB699 /* Default-568h@2x.png in Resources */,
-				2CCD57E5170B250600FBB699 /* LSViewController.xib in Resources */,
+				2CCD57E5170B250600FBB699 /* LSCaptureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +185,8 @@
 			files = (
 				2CCD57D5170B250600FBB699 /* main.m in Sources */,
 				2CCD57D9170B250600FBB699 /* LSAppDelegate.m in Sources */,
-				2CCD57E2170B250600FBB699 /* LSViewController.m in Sources */,
+				2CCD57E2170B250600FBB699 /* LSCaptureViewController.m in Sources */,
+				2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,12 +201,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		2CCD57E3170B250600FBB699 /* LSViewController.xib */ = {
+		2CCD57E3170B250600FBB699 /* LSCaptureViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2CCD57E4170B250600FBB699 /* en */,
 			);
-			name = LSViewController.xib;
+			name = LSCaptureViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -264,6 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrivingLog/DrivingLog-Prefix.pch";
 				INFOPLIST_FILE = "DrivingLog/DrivingLog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +286,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DrivingLog/DrivingLog-Prefix.pch";
 				INFOPLIST_FILE = "DrivingLog/DrivingLog-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

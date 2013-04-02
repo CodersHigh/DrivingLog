@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class LSViewController;
+@class LSCaptureViewController;
 
 @interface LSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) LSViewController *viewController;
+@property (strong, nonatomic) LSCaptureViewController *viewController;
 
 @end

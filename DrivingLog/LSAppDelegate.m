@@ -7,8 +7,7 @@
 //
 
 #import "LSAppDelegate.h"
-
-#import "LSViewController.h"
+#import "LSCaptureViewController.h"
 
 @implementation LSAppDelegate
 
@@ -16,7 +15,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[LSViewController alloc] initWithNibName:@"LSViewController" bundle:nil];
+    self.viewController = [[LSCaptureViewController alloc] initWithNibName:@"LSCaptureViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
