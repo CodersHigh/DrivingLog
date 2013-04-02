@@ -20,6 +20,8 @@
 		2CCD57E5170B250600FBB699 /* LSCaptureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57E3170B250600FBB699 /* LSCaptureViewController.xib */; };
 		2CCD57EC170B26D500FBB699 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCD57EB170B26D500FBB699 /* AVFoundation.framework */; };
 		2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57EE170B277700FBB699 /* LSCaptureManager.m */; };
+		2CCD57F3170B326A00FBB699 /* LSAssetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57F1170B326900FBB699 /* LSAssetController.m */; };
+		2CCD57F4170B326A00FBB699 /* LSAssetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57F2170B326A00FBB699 /* LSAssetController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,9 @@
 		2CCD57EB170B26D500FBB699 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		2CCD57ED170B277700FBB699 /* LSCaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSCaptureManager.h; sourceTree = "<group>"; };
 		2CCD57EE170B277700FBB699 /* LSCaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSCaptureManager.m; sourceTree = "<group>"; };
+		2CCD57F0170B326900FBB699 /* LSAssetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAssetController.h; sourceTree = "<group>"; };
+		2CCD57F1170B326900FBB699 /* LSAssetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAssetController.m; sourceTree = "<group>"; };
+		2CCD57F2170B326A00FBB699 /* LSAssetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAssetController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +102,9 @@
 				2CCD57E3170B250600FBB699 /* LSCaptureViewController.xib */,
 				2CCD57ED170B277700FBB699 /* LSCaptureManager.h */,
 				2CCD57EE170B277700FBB699 /* LSCaptureManager.m */,
+				2CCD57F0170B326900FBB699 /* LSAssetController.h */,
+				2CCD57F1170B326900FBB699 /* LSAssetController.m */,
+				2CCD57F2170B326A00FBB699 /* LSAssetController.xib */,
 				2CCD57CF170B250600FBB699 /* Supporting Files */,
 			);
 			path = DrivingLog;
@@ -173,6 +181,7 @@
 				2CCD57DD170B250600FBB699 /* Default@2x.png in Resources */,
 				2CCD57DF170B250600FBB699 /* Default-568h@2x.png in Resources */,
 				2CCD57E5170B250600FBB699 /* LSCaptureViewController.xib in Resources */,
+				2CCD57F4170B326A00FBB699 /* LSAssetController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +196,7 @@
 				2CCD57D9170B250600FBB699 /* LSAppDelegate.m in Sources */,
 				2CCD57E2170B250600FBB699 /* LSCaptureViewController.m in Sources */,
 				2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */,
+				2CCD57F3170B326A00FBB699 /* LSAssetController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,7 +7,7 @@
 //
 
 #import "LSCaptureViewController.h"
-
+#import "LSAssetController.h"
 
 @interface LSCaptureViewController ()
 
@@ -61,7 +61,10 @@
 }
 
 - (IBAction)presentAssetList:(id)sender {
+    LSAssetController *assetTableVC = [[LSAssetController alloc] initWithNibName:@"LSAssetController" bundle:nil];
+    UINavigationController *assetNavigationController = [[UINavigationController alloc] initWithRootViewController:assetTableVC];
     
+    [self presentModalViewController:assetNavigationController animated:YES]; 
 }
 
 @end
