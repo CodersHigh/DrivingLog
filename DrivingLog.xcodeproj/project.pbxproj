@@ -22,6 +22,8 @@
 		2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57EE170B277700FBB699 /* LSCaptureManager.m */; };
 		2CCD57F3170B326A00FBB699 /* LSAssetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57F1170B326900FBB699 /* LSAssetController.m */; };
 		2CCD57F4170B326A00FBB699 /* LSAssetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57F2170B326A00FBB699 /* LSAssetController.xib */; };
+		2CCD57F8170C463000FBB699 /* LSAssetPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57F6170C463000FBB699 /* LSAssetPlayerController.m */; };
+		2CCD57F9170C463000FBB699 /* LSAssetPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57F7170C463000FBB699 /* LSAssetPlayerController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,9 @@
 		2CCD57F0170B326900FBB699 /* LSAssetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAssetController.h; sourceTree = "<group>"; };
 		2CCD57F1170B326900FBB699 /* LSAssetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAssetController.m; sourceTree = "<group>"; };
 		2CCD57F2170B326A00FBB699 /* LSAssetController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAssetController.xib; sourceTree = "<group>"; };
+		2CCD57F5170C462F00FBB699 /* LSAssetPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAssetPlayerController.h; sourceTree = "<group>"; };
+		2CCD57F6170C463000FBB699 /* LSAssetPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAssetPlayerController.m; sourceTree = "<group>"; };
+		2CCD57F7170C463000FBB699 /* LSAssetPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAssetPlayerController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,9 @@
 				2CCD57F0170B326900FBB699 /* LSAssetController.h */,
 				2CCD57F1170B326900FBB699 /* LSAssetController.m */,
 				2CCD57F2170B326A00FBB699 /* LSAssetController.xib */,
+				2CCD57F5170C462F00FBB699 /* LSAssetPlayerController.h */,
+				2CCD57F6170C463000FBB699 /* LSAssetPlayerController.m */,
+				2CCD57F7170C463000FBB699 /* LSAssetPlayerController.xib */,
 				2CCD57CF170B250600FBB699 /* Supporting Files */,
 			);
 			path = DrivingLog;
@@ -182,6 +190,7 @@
 				2CCD57DF170B250600FBB699 /* Default-568h@2x.png in Resources */,
 				2CCD57E5170B250600FBB699 /* LSCaptureViewController.xib in Resources */,
 				2CCD57F4170B326A00FBB699 /* LSAssetController.xib in Resources */,
+				2CCD57F9170C463000FBB699 /* LSAssetPlayerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +206,7 @@
 				2CCD57E2170B250600FBB699 /* LSCaptureViewController.m in Sources */,
 				2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */,
 				2CCD57F3170B326A00FBB699 /* LSAssetController.m in Sources */,
+				2CCD57F8170C463000FBB699 /* LSAssetPlayerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

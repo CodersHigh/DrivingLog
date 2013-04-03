@@ -7,7 +7,7 @@
 //
 
 #import "LSAssetController.h"
-
+#import "LSAssetPlayerController.h"
 
 @implementation LSAssetController
 
@@ -155,14 +155,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    LSAssetPlayerController *playViewController = [[LSAssetPlayerController alloc] initWithNibName:@"LSAssetPlayerController" bundle:nil];
+    
+    NSString *selectedAsset = [self.assetArray objectAtIndex:indexPath.row];
+    playViewController.assetFileName = selectedAsset;
+    [self.navigationController pushViewController:playViewController animated:YES];
 }
 
 @end

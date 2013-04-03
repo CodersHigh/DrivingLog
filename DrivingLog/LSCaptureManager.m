@@ -8,7 +8,7 @@
 
 #import "LSCaptureManager.h"
 
-@interface LSCaptureManager (Private)
+@interface LSCaptureManager ()
 - (AVCaptureDevice *) cameraWithPosition:(AVCaptureDevicePosition) position;
 - (AVCaptureDevice *) frontFacingCamera;
 - (AVCaptureDevice *) backFacingCamera;
@@ -111,7 +111,7 @@
 #pragma mark Movie File Naming
 - (NSURL *) tempFileURL
 {    
-    NSString *outputPath = [[NSString alloc] initWithFormat:@"%@_%@.mov", [self documentDirectory], [self currentDateTime]];
+    NSString *outputPath = [[NSString alloc] initWithFormat:@"%@/%@.mov", [self documentDirectory], [self currentDateTime]];
     NSURL *outputURL = [[NSURL alloc] initFileURLWithPath:outputPath];
     return outputURL;
 }
