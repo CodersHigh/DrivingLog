@@ -52,10 +52,12 @@
 }
 
 - (IBAction)toggleRecord:(id)sender {
-    BOOL isOn = [(UISwitch *)sender isOn];
-    if (isOn){
+    BOOL isSelected = [(UIButton *)sender isSelected];
+    if (! isSelected){
+        [(UIButton *)sender setSelected:YES];
         [self.captureManager startRecording];
     } else {
+        [(UIButton *)sender setSelected:NO];
         [self.captureManager stopRecording];
     }
 }

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface LSAssetController : UITableViewController
 
 @property (readonly) NSMutableArray *drivingLogArray;

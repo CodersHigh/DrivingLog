@@ -10,6 +10,7 @@
 #import "LSAssetPlayerController.h"
 #import "LSAppDelegate.h"
 #import "LSLogData.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation LSAssetController
 
@@ -36,6 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    CALayer *navBarImageLayer = [CALayer layer];
+    navBarImageLayer.frame = CGRectMake(0, 0, 320, 44);
+    navBarImageLayer.contents = (id)[[UIImage imageNamed:@"navbar_log_list.png"] CGImage];
+    [self.navigationController.navigationBar.layer addSublayer:navBarImageLayer];
     
     UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissModal:)];
     self.navigationItem.rightBarButtonItem = doneButtonItem;
@@ -109,16 +115,33 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"LogListCell" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
+        cell.contentView.backgroundColor = [UIColor darkGrayColor];
     }
     
     LSLogData *currLog = [self.drivingLogArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = currLog.assetName;
+    UILabel *cellLabel;
     
-    NSString *attributeString = [NSString stringWithFormat:@"%@, %@", currLog.durationString, currLog.sizeString];
-    cell.detailTextLabel.text = attributeString;
+    cellLabel = (UILabel *)[cell viewWithTag:11];
+    cellLabel.text = currLog.assetName;
+    
+    cellLabel = (UILabel *)[cell viewWithTag:21];
+    cellLabel.text = currLog.durationString;
+    
+    cellLabel = (UILabel *)[cell viewWithTag:22];
+    cellLabel.text = currLog.sizeString;
+    
+    cellLabel = (UILabel *)[cell viewWithTag:31];
+    NSString *routeString = [NSString stringWithFormat:@"%@ ~ %@", currLog.startAddress, currLog.lastAddress];
+    cellLabel.text = routeString;
     
     return cell;
+}
+
+- (float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 86.0;
 }
 
 /*
