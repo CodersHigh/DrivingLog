@@ -44,6 +44,8 @@
     self.navigationController.toolbar.barStyle = UIBarStyleBlackTranslucent;
     [self.navigationController setToolbarHidden:NO animated:YES];
     
+    _assetPlayer = self.selectedLogData.logPlayer;
+    
     AVPlayerItem *mPlayerItem = _assetPlayer.currentItem;
     CMTimeValue duration = mPlayerItem.duration.value;
     CMTimeScale scale = mPlayerItem.duration.timescale;
@@ -61,7 +63,7 @@
     AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_assetPlayer];
     [self.view.layer addSublayer:playerLayer];
     playerLayer.frame = self.view.bounds;
-    playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    playerLayer.videoGravity = AVLayerVideoGravityResize;
     
     [_assetPlayer play];
 }

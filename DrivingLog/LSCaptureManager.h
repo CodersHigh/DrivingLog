@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVFoundation.h>
+#import <CoreMedia/CoreMedia.h>
+#import <CoreVideo/CoreVideo.h>
 
 @interface LSCaptureManager : NSObject <AVCaptureFileOutputRecordingDelegate>
 
@@ -15,9 +17,15 @@
 - (void) startRecording;
 - (void) stopRecording;
 
+- (CGAffineTransform)assetWriterTransformForDeviceOrientation;
+- (void)drawDateNTime:(CGContextRef)context;
+
 @property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,strong) AVCaptureDeviceInput *videoInput;
-@property (nonatomic,strong) AVCaptureMovieFileOutput *movieFileOutput;
+@property (nonatomic,retain) AVCaptureVideoDataOutput *videoDataOutput;
 
 @property (nonatomic,assign) UIBackgroundTaskIdentifier backgroundRecordingID;
+
+@property (nonatomic,retain) UIView *dateNTimeView;
+@property BOOL isRecording;
 @end
