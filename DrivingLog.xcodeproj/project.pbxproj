@@ -24,6 +24,8 @@
 		2CCD57F4170B326A00FBB699 /* LSAssetController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57F2170B326A00FBB699 /* LSAssetController.xib */; };
 		2CCD57F8170C463000FBB699 /* LSAssetPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57F6170C463000FBB699 /* LSAssetPlayerController.m */; };
 		2CCD57F9170C463000FBB699 /* LSAssetPlayerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CCD57F7170C463000FBB699 /* LSAssetPlayerController.xib */; };
+		2CCD57FC170C4C9000FBB699 /* LSLogData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CCD57FB170C4C9000FBB699 /* LSLogData.m */; };
+		2CCD57FE170C4DF300FBB699 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCD57FD170C4DF300FBB699 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,9 @@
 		2CCD57F5170C462F00FBB699 /* LSAssetPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSAssetPlayerController.h; sourceTree = "<group>"; };
 		2CCD57F6170C463000FBB699 /* LSAssetPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSAssetPlayerController.m; sourceTree = "<group>"; };
 		2CCD57F7170C463000FBB699 /* LSAssetPlayerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LSAssetPlayerController.xib; sourceTree = "<group>"; };
+		2CCD57FA170C4C8F00FBB699 /* LSLogData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LSLogData.h; sourceTree = "<group>"; };
+		2CCD57FB170C4C9000FBB699 /* LSLogData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LSLogData.m; sourceTree = "<group>"; };
+		2CCD57FD170C4DF300FBB699 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCD57FE170C4DF300FBB699 /* CoreLocation.framework in Frameworks */,
 				2CCD57EC170B26D500FBB699 /* AVFoundation.framework in Frameworks */,
 				2CCD57C9170B250600FBB699 /* UIKit.framework in Frameworks */,
 				2CCD57CB170B250600FBB699 /* Foundation.framework in Frameworks */,
@@ -89,6 +95,7 @@
 		2CCD57C7170B250600FBB699 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2CCD57FD170C4DF300FBB699 /* CoreLocation.framework */,
 				2CCD57EB170B26D500FBB699 /* AVFoundation.framework */,
 				2CCD57C8170B250600FBB699 /* UIKit.framework */,
 				2CCD57CA170B250600FBB699 /* Foundation.framework */,
@@ -100,6 +107,8 @@
 		2CCD57CE170B250600FBB699 /* DrivingLog */ = {
 			isa = PBXGroup;
 			children = (
+				2CCD57FA170C4C8F00FBB699 /* LSLogData.h */,
+				2CCD57FB170C4C9000FBB699 /* LSLogData.m */,
 				2CCD57D7170B250600FBB699 /* LSAppDelegate.h */,
 				2CCD57D8170B250600FBB699 /* LSAppDelegate.m */,
 				2CCD57E0170B250600FBB699 /* LSCaptureViewController.h */,
@@ -207,6 +216,7 @@
 				2CCD57EF170B277700FBB699 /* LSCaptureManager.m in Sources */,
 				2CCD57F3170B326A00FBB699 /* LSAssetController.m in Sources */,
 				2CCD57F8170C463000FBB699 /* LSAssetPlayerController.m in Sources */,
+				2CCD57FC170C4C9000FBB699 /* LSLogData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

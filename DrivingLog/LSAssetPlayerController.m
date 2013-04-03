@@ -40,18 +40,13 @@
 {
     [super viewDidAppear:animated];
     
-    NSString *assetPath = [[NSString alloc] initWithFormat:@"%@/%@",  [self documentDirectory], self.assetFileName];
-    NSURL *assetURL = [[NSURL alloc] initFileURLWithPath:assetPath];
-    
-    AVURLAsset *urlAsset = [AVURLAsset URLAssetWithURL:assetURL options:nil];
-    AVPlayerItem *playerItem = [AVPlayerItem playerItemWithAsset:urlAsset];
-    AVPlayer *mPlayer = [[AVPlayer alloc] initWithPlayerItem:playerItem];
-    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:mPlayer];
+    _assetPlayer = self.selectedLogData.logPlayer;
+    AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:_assetPlayer];
     
     [self.view.layer addSublayer:playerLayer];
     playerLayer.frame = self.view.bounds;
-    playerLayer.videoGravity = AVLayerVideoGravityResize;
-    [mPlayer play];
+    playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    [_assetPlayer play];
 }
 
 - (void)viewDidUnload

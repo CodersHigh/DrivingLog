@@ -7,6 +7,8 @@
 //
 
 #import "LSCaptureManager.h"
+#import "LSAppDelegate.h"
+#import "LSLogData.h"
 
 @interface LSCaptureManager ()
 - (AVCaptureDevice *) cameraWithPosition:(AVCaptureDevicePosition) position;
@@ -20,9 +22,9 @@
 
 @implementation LSCaptureManager
 
-@synthesize session = _session;
-@synthesize videoInput = _videoInput;
-@synthesize movieFileOutput = _movieFileOutput;
+//@synthesize session = _session;
+//@synthesize videoInput = _videoInput;
+//@synthesize movieFileOutput = _movieFileOutput;
 
 - (BOOL) setupSessionWithPreset:(NSString *)sessionPreset error:(NSError **)error
 {
@@ -99,12 +101,15 @@
 #pragma mark Recording Delegate
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections
 {
-    
+    LSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    LSLogData *newLogData = [[LSLogData alloc] init];
+    newLogData.assetName = [[fileURL path] lastPathComponent];
+    [appDelegate.drivingLogArray addObject:newLogData];
 }
 
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error
 {
-
+    NSLog(@"%s", __FUNCTION__);
 }
 
 #pragma mark - 

@@ -16,4 +16,6 @@
 
 @property (strong, nonatomic) LSCaptureViewController *viewController;
 
+@property (strong, readonly) NSMutableArray *drivingLogArray;
+
 @end

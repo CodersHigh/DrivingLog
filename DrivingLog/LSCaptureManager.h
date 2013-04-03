@@ -19,4 +19,5 @@
 @property (nonatomic,strong) AVCaptureDeviceInput *videoInput;
 @property (nonatomic,strong) AVCaptureMovieFileOutput *movieFileOutput;
 
+@property (nonatomic,assign) UIBackgroundTaskIdentifier backgroundRecordingID;
 @end

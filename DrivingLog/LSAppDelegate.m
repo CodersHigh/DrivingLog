@@ -13,12 +13,27 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *dataFilePath = [[self documentDirectory] stringByAppendingPathComponent:@"DrivingLogData.arch"];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:dataFilePath]) {
+        NSArray *unarchivedArray = [NSKeyedUnarchiver unarchiveObjectWithFile:dataFilePath];
+        _drivingLogArray = [[NSMutableArray alloc] initWithArray:unarchivedArray];
+    } else {
+        _drivingLogArray = [[NSMutableArray alloc] initWithCapacity:10];
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.viewController = [[LSCaptureViewController alloc] initWithNibName:@"LSCaptureViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (NSString *)documentDirectory
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    return [paths lastObject];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -45,7 +60,8 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSString *dataFilePath = [[self documentDirectory] stringByAppendingPathComponent:@"DrivingLogData.arch"];
+    [NSKeyedArchiver archiveRootObject:(NSArray *)_drivingLogArray toFile:dataFilePath];
 }
 
 @end

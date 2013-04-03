@@ -11,6 +11,6 @@
 
 @interface LSAssetController : UITableViewController
 
-@property (strong, readonly) NSArray *assetArray;
+@property (readonly) NSMutableArray *drivingLogArray;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "LSAssetController.h"
 #import "LSAssetPlayerController.h"
+#import "LSAppDelegate.h"
+#import "LSLogData.h"
 
 @implementation LSAssetController
 
@@ -34,9 +36,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    _assetArray = [[NSArray alloc] initWithArray:[fileManager contentsOfDirectoryAtPath:[self documentDirectory] error:nil]];
     
     UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismissModal:)];
     self.navigationItem.rightBarButtonItem = doneButtonItem;
@@ -86,6 +85,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (NSMutableArray *)drivingLogArray
+{
+    LSAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return appDelegate.drivingLogArray;
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -95,7 +100,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.assetArray count];
+    return [self.drivingLogArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,10 +109,14 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    cell.textLabel.text = [self.assetArray objectAtIndex:indexPath.row];
+    LSLogData *currLog = [self.drivingLogArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = currLog.assetName;
+    
+    NSString *attributeString = [NSString stringWithFormat:@"%@, %@", currLog.durationString, currLog.sizeString];
+    cell.detailTextLabel.text = attributeString;
     
     return cell;
 }
@@ -157,8 +166,8 @@
 {
     LSAssetPlayerController *playViewController = [[LSAssetPlayerController alloc] initWithNibName:@"LSAssetPlayerController" bundle:nil];
     
-    NSString *selectedAsset = [self.assetArray objectAtIndex:indexPath.row];
-    playViewController.assetFileName = selectedAsset;
+    LSLogData *selectedLog = [self.drivingLogArray objectAtIndex:indexPath.row];
+    playViewController.selectedLogData = selectedLog;
     [self.navigationController pushViewController:playViewController animated:YES];
 }
 
